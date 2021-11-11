@@ -1,0 +1,37 @@
+<!-- 今日一题来啦：
+    实现一个img组件，在图片加载失败时使用默认图片，
+    并且可以使用img自身上的所有属性 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片加载失败时使用默认图片</title>
+
+    <style>
+      img {
+        width: 300px;
+        height: 500px;
+        display: flex;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      data-src="http://www.oss.qcwy.org.cn/cq/image/cq_login_bg.jpeg"
+      alt=""
+      src=""
+      class="img-error"
+    />
+
+    <script>
+      const img =   document.querySelector('.img-error')
+      img.addEventListener('error',function (e) {
+          const src = e.target.getAttribute('data-src')
+          e.target.setAttribute('src',src)
+      })
+    </script>
+  </body>
+</html>

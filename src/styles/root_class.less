@@ -1,0 +1,164 @@
+@import "./var.less";
+.root_widht {
+  width: 10rem;
+  margin: 0 auto;
+}
+
+.van-cq-tab-class {
+  & span {
+    font-size: 12px;
+  }
+}
+
+/* 字体超出隐藏 */
+.overflow-text__3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.overflow-text__2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.overflow-text__1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.float-left {
+  float: left;
+}
+.float-clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.select-tab-item .active {
+  position: relative;
+  &::before {
+    content: "";
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    bottom: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border-radius: 50%;
+    border: 3px solid @color__theme;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+span,
+label {
+  font-size: 16px;
+}
+
+.w-pre-100 {
+  width: 100%;
+}
+.page_padding {
+  padding: 0.4rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+.border-none {
+  border: none;
+}
+.block {
+  display: block;
+}
+
+.border-radius--20 {
+  border-radius: 20px;
+}
+
+.border-radius--50pr {
+  border-radius: 50%;
+}
+
+.border-radius--12 {
+  border-radius: 12px;
+}
+.border-radius--08 {
+  border-radius: 8px;
+}
+
+.size_12 {
+  font-size: 12px;
+}
+
+.size_14 {
+  font-size: 14px;
+}
+.size_16 {
+  font-size: 16px;
+}
+.size_18 {
+  font-size: 18px;
+}
+.size_20 {
+  font-size: 20px;
+}
+.w-p-30 {
+  width: 30px;
+}
+.w-16 {
+  width: 16px;
+}
+
+.h-100vh {
+  height: 100vh;
+}
+.h-80vh {
+  height: 80vh;
+}
+
+.h-16 {
+  height: 16px;
+}
+
+.absolute {
+  position: absolute;
+}
+.absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.z-index--1 {
+  z-index: -1;
+}
+
+.opacity-09 {
+  opacity: 0.9;
+}
