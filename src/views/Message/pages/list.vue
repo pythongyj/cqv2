@@ -10,6 +10,7 @@
         v-for="(el, i) in e.list"
         :key="i"
         :title="el.userNick"
+        @click="$router.push({ name: 'ChatPublic', params: { userData: el } })"
       >
         <template #icon>
           <van-image

@@ -48,8 +48,8 @@ const routes = [
         children: [
           {
             path: "/",
-            name: "MessageChat",
-            component: () => import("../views/Message/pages/chat.vue"),
+            name: "MessageChatList",
+            component: () => import("../views/Message/pages/chat-list.vue"),
           },
           {
             path: "/message/list",
@@ -88,6 +88,18 @@ const routes = [
     name: "LivePeople",
     component: () =>
       import(/* webpackChunkName: "login" */ "../views/LivePeople/index.vue"),
+  },
+  {
+    path: "/chatpublic",
+    name: "ChatPublic",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/ChatPublic/index.vue"),
+  },
+  {
+    path: "/topicnotice",
+    name: "TopicNotice",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/TopicNotice/index.vue"),
   },
 ];
 

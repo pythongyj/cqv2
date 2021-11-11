@@ -1,5 +1,5 @@
 <template>
-  <div class="cq-index flex flex-column h-100vh">
+  <div class="cq-index flex flex-column h-100vh root_widht">
     <keep-alive>
       <router-view class="flex-1" />
     </keep-alive>

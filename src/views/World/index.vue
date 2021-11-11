@@ -31,7 +31,12 @@
 
     <!-- 具体内容  瀑布流 -->
     <div class="m-top--20 world-pubuliu">
-      <div v-for="e in initDataList" :key="e.id" class="relative">
+      <div
+        v-for="e in initDataList"
+        :key="e.id"
+        @click="$router.push({ name: 'TopicNotice', params: { initData: e } })"
+        class="relative"
+      >
         <van-image class="border-radius--08 overflow-hidden" :src="e.image" />
         <div
           class="absolute absolute-center color-fff flex-center-center-column"

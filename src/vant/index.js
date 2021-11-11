@@ -18,6 +18,7 @@ import {
   IndexAnchor,
   Cell,
   CellGroup,
+  Popover
 } from "vant";
 Vue.use(Button)
   .use(Icon)
@@ -36,4 +37,5 @@ Vue.use(Button)
   .use(IndexAnchor)
   .use(Cell)
   .use(CellGroup)
+  .use(Popover)
   .use(NavBar);

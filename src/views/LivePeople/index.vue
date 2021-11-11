@@ -30,17 +30,7 @@
           v-for="(el, i) in e.list"
           :key="i"
         >
-          <div class="float-clear">
-            <van-image
-              class="float-left"
-              v-for="(ele, inx) in el.images"
-              :key="inx"
-              fit="cover"
-              :width="calcWidth(el, inx)"
-              :height="calcHeight(el, inx)"
-              :src="ele"
-            />
-          </div>
+          <image-card :imageList="el.images"></image-card>
           <div class="flex space-between align-center p-x--20">
             <div class="flex flex-column p-y--20">
               <span class="p-b--10">{{ el.name }}</span>
@@ -70,6 +60,7 @@
 </template>
 
 <script>
+import ImageCard from '../../components/image-card.vue'
 export default {
   data() {
     return {
@@ -168,6 +159,9 @@ export default {
         },
       ],
     };
+  },
+  components:{
+    ImageCard
   },
   methods: {
     onClickLeft() {

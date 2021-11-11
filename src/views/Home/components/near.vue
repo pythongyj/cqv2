@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute z-index--1">
+  <div class="absolute absolute-center-h h-80vh z-index--1">
     <van-image
       fit="cover"
       radius="1rem"

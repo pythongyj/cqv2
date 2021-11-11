@@ -26,11 +26,16 @@
       {{ itemData.desc }}
     </div>
     <!-- 图片 -->
-    <van-image
+    <!-- <van-image
       fit="cover"
       class="border-radius--12 overflow-hidden m-y--10"
       :src="itemData.userIcon"
-    />
+    /> -->
+    <image-card
+      class="m-y--10"
+      :imageList="itemData.images"
+      :borderRadius="true"
+    ></image-card>
     <!-- tags -->
     <div class="flex">
       <span
@@ -117,12 +122,16 @@
 </template>
 
 <script>
+import ImageCard from "./image-card.vue";
 export default {
   props: {
     itemData: {
       type: [Object],
       required: true,
     },
+  },
+  components: {
+    ImageCard,
   },
 };
 </script>

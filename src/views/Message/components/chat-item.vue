@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-y--10">
+  <div class="flex p-y--10" @click="$router.push({name:'ChatPublic',params:{userData:itemData}})">
     <van-image
       width="50"
       height="50"

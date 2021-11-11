@@ -28,7 +28,7 @@ export default {
           id: 0,
           name: "聊天",
           isActive: true,
-          toName: "MessageChat",
+          toName: "MessageChatList",
         },
         {
           id: 1,

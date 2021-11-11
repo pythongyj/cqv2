@@ -1,5 +1,5 @@
 <template>
-  <div class="cq-account-page account-bg ">
+  <div class="cq-account-page account-bg h-100vh overflow-scroll">
     <div class="page_padding">
       <div class="flex justify-end p-y--20">
         <van-icon name="open" class-prefix="cq" class="cqicon" size="20" />
@@ -59,8 +59,9 @@
       </div>
     </div>
 
-    <div style="height: 100px" class="bg-fff m-05 page_padding border-radius--12">
-       <div class="flex select-tab-item p-b--10">
+    <!-- 底部动态 赞过选项数据 -->
+    <div class="bg-fff m-05 page_padding border-radius--12">
+      <div class="flex select-tab-item p-b--10">
         <span
           v-for="e in tabData"
           :key="e.id"
@@ -71,15 +72,24 @@
         >
       </div>
 
+      <account-card
+        v-show="isActiveTab == 0"
+        v-for="e in dynamicListData"
+        :key="e.id"
+        :initData="e"
+      ></account-card>
 
-      <account-card></account-card>
+      <div  v-show="isActiveTab == 1">
+        <span class="size_14">设计图暂时没有，稍后参考其他app添加上</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 // http://www.oss.qcwy.org.cn/cq/image/home/liwu.png
-import AccountCard from './components/card.vue'
+import AccountCard from "./components/card.vue";
+import { nanoid } from "nanoid";
 export default {
   data() {
     return {
@@ -91,7 +101,36 @@ export default {
         focus: 32,
         focusForMe: 16,
       },
-
+      dynamicListData: [
+        {
+          id: nanoid(5),
+          time: {
+            month: 3,
+            day: 28,
+          },
+          tags: ["日常", "热恋"],
+          desc: "今日审美打卡，暖色系",
+          images: [
+            "http://www.oss.qcwy.org.cn/cq/image/home/2.jpeg",
+            "http://www.oss.qcwy.org.cn/cq/image/home/3.jpeg",
+            "http://www.oss.qcwy.org.cn/cq/image/home/1.jpeg",
+          ],
+        },
+        {
+          id: nanoid(5),
+          time: {
+            month: 3,
+            day: 24,
+          },
+          tags: ["可爱", "优秀"],
+          desc: "每天最开心的事就是码代码",
+          images: [
+            "http://www.oss.qcwy.org.cn/cq/image/home/richang.jpeg",
+            "http://www.oss.qcwy.org.cn/cq/image/home/2.jpeg",
+            "http://www.oss.qcwy.org.cn/cq/image/home/3.jpeg",
+          ],
+        },
+      ],
 
       isActiveTab: 0,
       tabData: [
@@ -108,17 +147,17 @@ export default {
       ],
     };
   },
-  components:{
-    AccountCard
+  components: {
+    AccountCard,
   },
-  methods:{
+  methods: {
     onSelectTab(e) {
       console.log(e);
       this.tabData.map((el) => (el.isActive = false));
       e.isActive = !e.isActive;
       this.isActiveTab = e.id;
     },
-  }
+  },
 };
 </script>
 
@@ -126,6 +165,7 @@ export default {
 .account-bg {
   background-image: url("http://www.oss.qcwy.org.cn/cq/image/home/account-bg1.jpeg");
   background-size: 100%;
+  background-attachment: fixed;
   opacity: 0.7;
 }
 .account-user-icon-border {
