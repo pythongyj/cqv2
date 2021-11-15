@@ -1,7 +1,12 @@
 <template>
   <div class="flex flex-column">
     <!-- 个人信息部分 -->
-    <div class="flex space-between align-center p-y--10">
+    <div
+      @click="
+        $router.push({ name: 'OtherAccount', params: { userData: itemData } })
+      "
+      class="flex space-between align-center p-y--10"
+    >
       <div class="flex">
         <van-image
           round

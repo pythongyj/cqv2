@@ -7,7 +7,7 @@
       :src="itemData.userIcon"
     />
     <div class="flex flex-column space-between p-y--06 m-left--10 flex-1">
-      <span class="size_14">{{ itemData.userName }}</span>
+      <span class="size_14">{{ itemData.userNick }}</span>
       <span class="size_12 color-gray-1 overflow-text__1">{{
         itemData.newText
       }}</span>

@@ -13,7 +13,7 @@ export default {
       initDataList: [
         {
           id: nanoid(5),
-          userName: "刘美丽",
+          userNick: "刘美丽",
           time: "20:10",
           number: 12,
           newText: "离别使爱情热烈，相逢则使它牢固",
@@ -21,7 +21,7 @@ export default {
         },
         {
           id: nanoid(5),
-          userName: "小喵咪",
+          userNick: "小喵咪",
           time: "20:10",
           number: 1000,
           newText: "春天没有花，人生没有爱，那还成个什么世界",
@@ -29,7 +29,7 @@ export default {
         },
         {
           id: nanoid(5),
-          userName: "小可爱",
+          userNick: "小可爱",
           time: "20:10",
           number: 99,
           newText: "求学的三个条件是：多观察、多吃苦、多研究",
@@ -37,7 +37,7 @@ export default {
         },
         {
           id: nanoid(5),
-          userName: "唐嫣",
+          userNick: "唐嫣",
           time: "22:10",
           number: 8,
           newText: "游手好闲的学习并不比学习游手好闲好",

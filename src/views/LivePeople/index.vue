@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="root_widht">
     <van-nav-bar
       title="有趣的人"
+      class="root_widht root_width_aux"
       left-arrow
+      fixed
       safe-area-inset-top
       @click-left="onClickLeft"
       @click-right="onClickRight"
@@ -12,9 +14,12 @@
       </template>
     </van-nav-bar>
     <van-tabs
+    class="root_widht"
       v-model="activeTabId"
       animated
       swipeable
+      sticky
+      offset-top="63px"
       line-width="0px"
       swipe-threshold="10"
     >
@@ -23,7 +28,7 @@
         :key="e.id"
         :title="e.title"
         title-class="van-cq-tab-class"
-        class="page_padding"
+        class="page_padding m-t--20"
       >
         <div
           class="border-radius--12 overflow-hidden m-y--10 bg-gray--400"
@@ -60,7 +65,7 @@
 </template>
 
 <script>
-import ImageCard from '../../components/image-card.vue'
+import ImageCard from "../../components/image-card.vue";
 export default {
   data() {
     return {
@@ -160,8 +165,8 @@ export default {
       ],
     };
   },
-  components:{
-    ImageCard
+  components: {
+    ImageCard,
   },
   methods: {
     onClickLeft() {
@@ -199,3 +204,10 @@ export default {
   },
 };
 </script>
+<style>
+.van-sticky--fixed{
+  width: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>

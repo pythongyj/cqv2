@@ -18,7 +18,7 @@ import {
   IndexAnchor,
   Cell,
   CellGroup,
-  Popover
+  Popover,
 } from "vant";
 Vue.use(Button)
   .use(Icon)

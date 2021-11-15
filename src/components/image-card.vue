@@ -8,6 +8,7 @@
       v-for="(ele, inx) in imageList"
       :key="inx"
       fit="cover"
+      @click="onImagePreview(imageList, inx)"
       :width="calcWidth(imageList.length, inx)"
       :height="calcHeight(imageList.length, inx)"
       :src="ele"
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import { ImagePreview } from "vant";
 export default {
   props: {
     imageList: {
@@ -52,6 +54,16 @@ export default {
         default:
           return inx == 0 ? "6rem" : "3rem";
       }
+    },
+    onImagePreview(images, startPosition) {
+      console.log("images", images);
+      ImagePreview({
+        images,
+        startPosition,
+        onClose() {
+          this.$toast("关闭");
+        },
+      });
     },
   },
 };

@@ -101,6 +101,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "login" */ "../views/TopicNotice/index.vue"),
   },
+  {
+    path: "/otheracount",
+    name: "OtherAccount",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/OtherAccount/index.vue"),
+  },
 ];
 
 const router = new VueRouter({

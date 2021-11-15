@@ -88,7 +88,7 @@
 
 <script>
 // http://www.oss.qcwy.org.cn/cq/image/home/liwu.png
-import AccountCard from "./components/card.vue";
+import AccountCard from "../../components/user-time-card.vue";
 import { nanoid } from "nanoid";
 export default {
   data() {

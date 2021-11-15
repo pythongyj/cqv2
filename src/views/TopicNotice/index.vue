@@ -2,7 +2,9 @@
   <!-- <div>我是话题页面</div> -->
   <div class="root_widht">
     <van-nav-bar
+      class="root_width_aux root_widht"
       left-arrow
+      fixed
       @click-left="onClickLeft"
       @click-right="onClickRight"
       :border="false"
@@ -16,7 +18,7 @@
         /> </template
     ></van-nav-bar>
     <!-- 话题标题部分 -->
-    <div class="flex p-y--10 page_padding">
+    <div class="flex p-y--10 page_padding m-t--50">
       <van-image
         width="80"
         height="80"
@@ -63,6 +65,15 @@
         :itemData="e"
       ></user-card>
     </div>
+
+    <!-- 立即发布 -->
+    <van-button
+      round
+      class="p-y--10 position-fixed absolute-center-h b-20 size_14 p-x--20"
+      type="primary"
+      @click="onRelease"
+      >立即发布</van-button
+    >
   </div>
 </template>
 
@@ -212,6 +223,10 @@ export default {
           }
         }
       }
+    },
+
+    onRelease() {
+      this.$toast("发布功能暂未完成，敬请关注");
     },
   },
 };

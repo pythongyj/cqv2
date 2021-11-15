@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import ImageCard from "../../../components/image-card.vue";
+import ImageCard from "./image-card.vue";
 export default {
   props: {
     initData: {
