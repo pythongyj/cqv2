@@ -27,7 +27,7 @@
       round
       block
       class="m-top--20"
-      @click="$router.replace({ name: 'Index' })"
+      @click="$router.replace({ name: 'Home' })"
       type="primary"
       >确认</van-button
     >

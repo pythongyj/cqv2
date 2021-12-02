@@ -39,6 +39,7 @@
 <script>
 import Near from "./components/near";
 import Found from "./components/found";
+
 export default {
   data() {
     return {
@@ -61,7 +62,11 @@ export default {
     Found,
     Near,
   },
+  mounted() {
+    // this.initData();
+  },
   methods: {
+ 
     onSelectTab(e) {
       console.log(e);
       this.tabData.map((el) => (el.isActive = false));

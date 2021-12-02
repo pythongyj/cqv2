@@ -1,10 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+import router from "./router/index";
 import store from "./store";
 import "reset.css";
 import "@/vant/index";
-import { setRem } from "@/utils/rem";
+import { setRem } from "@/utils/func/rem";
 import "vant/lib/icon/local.css";
 import "amfe-flexible";
 

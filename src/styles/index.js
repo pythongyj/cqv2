@@ -4,3 +4,4 @@ import "./flex.less";
 import "./padding.less";
 import "./margin.less";
 import "./color.less";
+import "./position.less";

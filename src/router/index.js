@@ -1,118 +1,20 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import router from "./create";
 
-Vue.use(VueRouter);
+import store from "../store/index";
 
-const routes = [
-  {
-    path: "/",
-    name: "Index",
-    component: () => import(/* webpackChunkName: "home" */ "../views/Index"),
-    children: [
-      {
-        path: "/",
-        name: "Home",
-        component: () => import(/* webpackChunkName: "home" */ "../views/Home"),
-      },
-      {
-        path: "/discover",
-        name: "Discover",
-        component: () =>
-          import(/* webpackChunkName: "home" */ "../views/Discover"),
-        children: [
-          {
-            path: "/",
-            name: "Encounter",
-            component: () =>
-              import(/* webpackChunkName: "home" */ "../views/Encounter"),
-          },
-          {
-            path: "/discover/world",
-            name: "World",
-            component: () =>
-              import(/* webpackChunkName: "home" */ "../views/World"),
-          },
-          {
-            path: "/discover/chum",
-            name: "Chum",
-            component: () =>
-              import(/* webpackChunkName: "home" */ "../views/Chum"),
-          },
-        ],
-      },
-      {
-        path: "/message",
-        name: "Message",
-        component: () =>
-          import(/* webpackChunkName: "home" */ "../views/Message"),
-        children: [
-          {
-            path: "/",
-            name: "MessageChatList",
-            component: () => import("../views/Message/pages/chat-list.vue"),
-          },
-          {
-            path: "/message/list",
-            name: "MessageList",
-            component: () => import("../views/Message/pages/list.vue"),
-          },
-        ],
-      },
-      {
-        path: "/account",
-        name: "Account",
-        component: () =>
-          import(/* webpackChunkName: "home" */ "../views/Account"),
-      },
-    ],
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: () => import(/* webpackChunkName: "login" */ "../views/Login"),
-  },
-  {
-    path: "/leadone",
-    name: "LeadOne",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Lead/page_one.vue"),
-  },
-  {
-    path: "/leadtwo",
-    name: "LeadTwo",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Lead/page_two.vue"),
-  },
-  {
-    path: "/livepeople",
-    name: "LivePeople",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/LivePeople/index.vue"),
-  },
-  {
-    path: "/chatpublic",
-    name: "ChatPublic",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/ChatPublic/index.vue"),
-  },
-  {
-    path: "/topicnotice",
-    name: "TopicNotice",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/TopicNotice/index.vue"),
-  },
-  {
-    path: "/otheracount",
-    name: "OtherAccount",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/OtherAccount/index.vue"),
-  },
-];
-
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
+// 跳转之前的全局钩子函数
+router.beforeEach(async (to, from, next) => {
+  // 用户验证 页面是否需要登陆 是否登陆 --> 页面需要登陆 ---> 没有登陆 ---> 登陆页面
+  let loginStatus = store.getters["globals/getIsLogin"];
+  if (to.meta.requiresAuth && !loginStatus) {
+    next({ name: "Login" });
+  }
+  next();
+});
+// 路由跳转后的全局钩子
+router.afterEach(function () {
+  //   console.log(router.app.$i18n.locale, "xx------x");
+  console.log("afterEach", "xx------x");
 });
 
 export default router;

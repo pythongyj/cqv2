@@ -19,6 +19,8 @@ import {
   Cell,
   CellGroup,
   Popover,
+  Loading,
+  Overlay
 } from "vant";
 Vue.use(Button)
   .use(Icon)
@@ -38,4 +40,6 @@ Vue.use(Button)
   .use(Cell)
   .use(CellGroup)
   .use(Popover)
+  .use(Loading)
+  .use(Overlay)
   .use(NavBar);
